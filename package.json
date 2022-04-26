@@ -28,10 +28,12 @@
     "better-js-class": "*",
     "cps": "*",
     "electron-log": "^4.4.6",
+    "electron-updater": "^4.0.0",
+    "eslint": "^8.14.0",
+    "eslint-config-google": "^0.14.0",
     "mysql": "^2.18.1",
     "underscore": "*"
   },
-
   "build": {
     "productName": "sn-query",
     "appId": "com.electron.start",
@@ -42,9 +44,15 @@
     "nsis": {
       "oneClick": false,
       "perMachine": true,
-      "allowToChangeInstallationDirectory": true, 
+      "allowToChangeInstallationDirectory": true,
       "installerIcon": "app.ico",
       "shortcutName": "SNQUERY"
     }
-  }
+  },
+  "publish": [
+    {
+      "provider": "xiaopang",
+      "url": "https://cdn-ptest.vavafood.com/mi/firmware/t/"
+    }
+  ]
 }
