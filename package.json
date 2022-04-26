@@ -1,10 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "sn-query",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder  install-app-deps",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,30 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^18.1.0"
+    "electron": "^18.1.0",
+    "electron-builder": "^19.56.2"
+  },
+  "dependencies": {
+    "better-js-class": "*",
+    "cps": "*",
+    "electron-log": "^4.4.6",
+    "mysql": "^2.18.1",
+    "underscore": "*"
+  },
+
+  "build": {
+    "productName": "sn-query",
+    "appId": "com.electron.start",
+    "win": {
+      "target": "nsis"
+    },
+    "icon": "app.ico",
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true, 
+      "installerIcon": "app.ico",
+      "shortcutName": "SNQUERY"
+    }
   }
 }
